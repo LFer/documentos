@@ -1,0 +1,77 @@
+
+1) Actualizar repositorio y server
+a) sudo apt-get update
+b) sudo apt-get upgrade –y
+2) Instalar Java Runtime (necesario para Libreoffice
+a) sudo apt-get install default-jre –y
+
+3) Instalar Libreoffice como servicio en puerto 8100 del localhost
+a) sudo apt-get install libreoffice libreoffice-script-provider-python –y
+b) echo '#!/bin/sh' | sudo tee /etc/init.d/office
+c) echo '/usr/bin/libreoffice --headless --accept="socket,host=localhost,port=8100,tcpNoDelay=1;urp;" &' | sudo tee -a /etc/init.d/office
+d) sudo chmod +x /etc/init.d/office
+e) sudo update-rc.d office defaults
+f) sudo /etc/init.d/office
+
+4) Verificar si Libreoffice está escuchando
+a) telnet localhost 8100
+
+5) Probar si Libreoffice hace las conversiones de formatos con unoconv
+a) sudo apt-get install unoconv
+b) primero creamos un archivo ods, en este caso pepe.ods, luego pasamos a testear
+i) unoconv -p 8100 -f xls pepe.ods
+ii) unoconv -p 8100 -f pdf pepe.ods
+iii) unoconv -p 8100 -f doc pepe.odt
+
+6) Instalar herramientas y dependencias de aeroolib
+a) sudo apt-get install git –y
+b) sudo apt-get install python-setuptools
+c) sudo apt-get install python-lxml -y
+
+7) Instalar aeroolib desde github oficial
+a) sudo mkdir /opt/aeroo
+b) cd /opt/aeroo
+c) sudo git clone https://github.com/aeroo/aeroolib.git
+d) cd /opt/aeroo/aeroolib
+e) sudo python setup.py install
+
+8) Instalar dependencias de aeroo-docs
+a) sudo apt-get install python-genshi python-cairo -y
+b) sudo apt-get install python3-pip –y
+c) sudo pip3 install jsonrpc2 daemonize
+i) Reiniciamos el server [sudo shutdown -r now]
+ii) Probamos si las librerias quedaron bien instaladas, para ello abrimos una consola Python e importamos el modulo instalado. 
+(1) import jsonrpc2 si salta a la siguiente linea, es que esta instalada la libreria instalada, si nos encontramos con un error de ImportError no module named “jsonrpc2” debemos primero volver a relizar el paso 8c. Volvemos a probar. Si el error persiste se instalan las librerias desde el Package Index de Python. En el siguiente paso se explica como hacerlo:
+(2) entramos a https://pypi.python.org y buscamos la libreria jsonrpc2 y/o daemonize (o cualquier otra que nos esta dando problemas y nos bajamos el tar.gz
+(a) sudo mkrdir libreriaspithon (aca vamos a descromprimir las librerias descargadas)
+(b) tar xvfz nombre_de_la_libreria.tar.gz y con cd entramos a la carpeta descromprimida
+(c) sudo python setup.py install
+(d) reiniciamos el server ( sudo shutdown -r now) y repetimos el paso forma facil
+(e) Probamos que haya quedado bien instalado, para eso repetimos el paso 8)c)ii
+
+
+9) Instalr aeroo_docs desde github official
+a) cd /opt/aeroo
+b) sudo git clone https://github.com/aeroo/aeroo_docs.git
+c) yes | sudo python3 /opt/aeroo/aeroo_docs/aeroo-docs start -c /etc/aeroo-docs.conf
+d) sudo ln -s /opt/aeroo/aeroo_docs/aeroo-docs /etc/init.d/aeroo-docs
+e) sudo update-rc.d aeroo-docs defaults
+f) sudo service aeroo-docs start
+g) [!] Si nos da error “Unable to lock on the pidfile”, reiniciamos el  servidor (sudo shutdown -r now)   y repetimos  el paso 8)b)
+
+10)  Despues de instalar Odoo (Descrito en otro documento), instalamos aeroo-reports oficial desde github
+a) sudo apt-get install -y git python-pip
+b) sudo apt-get install -y python-dev libcups2-dev
+c) sudo pip install pycups
+d) en las instalaciones estandar de Datamatic este modulo va en /opt/odoo/openerp/addons-extras por lo tanto hacemos cd hacia esa direccion 
+e) git clone -b master https://github.com/aeroo/aeroo_reports.git
+
+11)  Instalar report_aeroo desde Odoo
+a) Si ya tenemos caracteristicas tecnicas ir a paso X. Ir a Configuracion → Usuarios → y tildamos la casilla “Caracteristicas Tecnicas”. Guardamos y refrescamos la pagina
+b) Nos dirigimos a Configuracion → Actualizar Lista de Modulos → Actualizar
+c) Nos dirigimos a Configuracion → Modulos Loles → buscamos Aaero
+d) Instalamos el modulo report_aeroo Click en Contnuar → Elegimos Autentificacion simple en el combo y agregamos usuario y contraseña, o dejamos el combo vacio y lo demas en blanco. [ ! ] Si luego queremos settear una contraseña podemos hacerlo en el archivo /etc/aeroo-docs.conf.
+e) Click en Aplicar y luego en Test, si todo se configuro bien deberia aparecer el siguiente mensaje: “Success! Connection to the DOCS service was successfully established and PDF convertion is working.
+
+
+EL PUERTO ES 8989

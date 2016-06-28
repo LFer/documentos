@@ -1,0 +1,54 @@
+Instalar wkhtmltopdf para imprimir reportes en ODOO
+
+Si en Odoo nos pide actualizar 
+
+##Nos loggeamos en la maquina
+
+wkhtmltopdf --version
+	
+##Si esta bien instalado aparecera lo siguiente, de lo contrario procedemos a instalar
+wkhtmltopdf 0.12.2.1 (with patched qt)
+
+##Determinamos la arquitectura del sistema operativo
+
+uname -m
+Teniendo en cuenta que:
+i386 and i686 = 32-bit.
+x86_64 = 64-bit
+
+##siendo root
+
+##Determinar el SO 
+lsb_release -a
+
+##Determinamos la arquitectura del sistema operativo
+
+uname -m
+Teniendo en cuenta que:
+i386 and i686 = 32-bit.
+x86_64 = 64-bit
+
+##---------Debian-----##
+##64-bit
+http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-jessie-amd64.deb
+dpkg -i wkhtmltox-0.12.2.1_linux-jessie-amd64.deb
+
+##32-bit
+http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-jessie-i386.deb
+dpkg -i wkhtmltox-0.12.2.1_linux-jessie-i386.deb
+
+
+##-------Ubuntu-------##
+##64-bit
+wget http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
+
+dpkg -i wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
+
+##32-bit
+wget http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-trusty-i386.deb
+dpkg -i wkhtmltox-0.12.2.1_linux-trusty-i386.deb
+
+
+
+cp /usr/local/bin/wkhtmltopdf /usr/bin
+cp /usr/local/bin/wkhtmltoimage /usr/bin

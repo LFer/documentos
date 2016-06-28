@@ -1,0 +1,22 @@
+creamos las sequencias en un xml
+
+        <record id="seq_type_work_order" model="ir.sequence.type">
+            <field name="name">Presupuesto de Proyecto</field>
+            <field name="code">presupuesto.de.proyecto</field>
+        </record>
+
+        <record id="seq_work_order_number" model="ir.sequence">
+            <field name="name">Presupuesto de Proyecto</field>
+            <field name="code">presupuesto.de.proyecto</field>
+            <field name="prefix">Presupuesto %(month)s/%(day)s/%(year)s-</field>
+            <field name="padding">5</field>
+        </record>
+
+
+la llamamos en el metodo create
+
+    @api.model
+    def create(self, vals):
+        vals['number'] = self.env['ir.sequence'].next_by_code('presupuesto.de.proyecto') or 'Borrador'
+        result = super(work_order, self).create(vals)
+        return result

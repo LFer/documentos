@@ -1,0 +1,27 @@
+el script fue sacado de http://www.odoo.yenthevg.com/installing-odoo-9-on-ubuntu-14-04/
+
+si da error de .less 
+
+To all of you who are encountering this problem, it is due to a problem with an old version of nodejs (shows up especially in Ubuntu 12.04). To install a stable version we use Chris Lea's repo as follows:
+
+sudo apt-get install python-software-properties
+sudo apt-add-repository ppa:chris-lea/node.js
+sudo apt-get update
+Then you install nodejs:
+
+sudo apt-get install nodejs
+
+You can then check version of nodejs using:
+
+node -v
+
+It should be at least greater than > 0.10
+
+npm -v
+
+Should return a version at least > 1.4
+
+Then finally execute the following command, whick will update npm to a newer version as well as install the less plugin:
+
+sudo npm install -g npm
+sudo npm install -g less less-plugin-clean-css

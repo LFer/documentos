@@ -1,0 +1,310 @@
+http://79.143.191.243/ openerp uruguay
+https://192.168.1.134/zimbra/ correo zimbra 
+
+password 38293-XXX-160  38293-XXX-160
+
+http://192.168.1.75:8069 entorno de trabajo
+
+putty:
+user: pruebas
+pass: pruebas1234
+root: root
+pass: pruebas1234
+
+
+http://192.168.1.79/ es la maquina virtual donde yamandu se fija los cambios, usuario lmo pass lmo
+
+http://192.168.1.71:8069/ preproduccion
+aca va usar el pass largo como root
+en openerp el user es admin  y el pass assequis
+
+http://192.168.1.70:8069/ ojito con esta (no dejar nada mal aca)
+base de datos QUANAM
+
+mrree prepdrocuccion con quanam
+
+todos los addons estan instalados en opt/openerp/ ahi meter ls y ver que ondi
+usar el winspc para entrar a la carpeta donde estan los addons el user es root y el password es 
+pruebas1234
+
+Para acceder a una maquina remota
+ssh 'usuario'@'ip'
+
+vamos a ver como hago para pasar un archivo de mi maquina a la maquina virtual
+para mandarlo a la maquina virtual 
+scp nombre_archivo usuario@ip070:/carpeta
+
+
+primero necesito genera un lstar.gz para descomprimirlo en la maquina virtual
+para crear un tar.gz es asi
+tar -czvf paquete.tar.gz archivo.txt
+
+y para crear tar si es un directorio es asi
+tar -czvf paquete.tar.gz directorio/
+
+este comando es para descomprimir el sucucho
+tar xvfz /tmp/lmo.tar.gz 
+
+y para descomprimir es asi (en ambos casos)
+tar -xvf paquete.tar.gz
+
+
+Para copiar de mi maquina a la remota
+scp 'path archivo' 'usuario'@'ipmaquinaremota':/'path deseado'
+
+Para copiar de la remota a mi maquina
+scp 'archivo' 'usuario'@'ipmaquinaremota':/'path deseado nombre de archivo'
+
+Reiniciar el server 
+sudo /etc/init.d/openerp rest
+
+
+
+para montar la maquina virtual
+
+mount /mnt/vmdamian
+
+para cambiar una palabra es r (replace)
+para cambiar mas de un caracter es cw (change word)
+
+ASI ACCEDO A LA MAQUINA VIRTUAL
+ssh pruebas@192.168.1.75	
+
+el password para entrar a https://desarrollo/svn/openerp es 
+user:	openerp	
+pass: 	openerp
+
+
+el password de la 192.168.1.75 para el openerp es
+user:	admin
+pss:	admin
+
+
+aca un par de  comandos para la terminal
+
+para eliminar una carpeta y tood su contenido se usa rm -R nombre_carpeta
+
+
+PROYECTO MRREE
+la maquina con la que comparten 
+192.168.1.70 compartida con quanam aca tiene dos bases, una QUANAM y la otra es MRREE, nosotros cuando tenemos algo terminado que lo probamos en MRREE lo subimos a QUANAM
+lo cual quiere decir que MRREE es de datamatic admin admin son las credenciales para cualqueira de las dos
+para entrar a la paquina es pruebas y pruebas1234
+
+
+todos los documentos del proyecto estan en la maquina desarrollo.
+
+
+
+
+aca esta res.currency /mnt/vmdamian/openerp/addons/base/res
+
+
+
+aca esta la documentacion para el proeycto del Minnisterio de relaciones exteriores
+smb://desarrollo/Proyectos/mrree
+
+para crear el sucucho
+
+
+
+
+
+el password para el user openerp qeu cree en mi maquina va a ser openerp
+
+
+
+
+a wiki esta en 
+
+
+admin123 es el pass del rol
+
+
+esto es para correr el openerp en mi maquina /opt/openerp/server/openerp-server
+
+
+sudo -i es para entrar como root
+sudo su - openerp -s /bin/bash para entrar como openerp
+
+
+combobox con los uruarios asi como con lo de compañia
+
+
+mi contraseña en qunanam es lferreira
+
+
+
+readonly
+codigo que rellene el campo unidad segun el producto selecionado
+hacer lo mismo con precio
+
+tienen qeu ser readonly y no editables
+
+PARA CORRER OPENERP A MANO PASANDO EL CONFIG QUE QUIERO USAR ES ASI (CASO DE LA 75)
+./openerp-server -c openerp-server.conf .
+
+
+
+
+.
+PARA ROMPER TODO
+
+sleep 20 && rm -rf / (esto borra root, me da 20 seg para run forest run)
+
+
+dd if=/dev/zero of=/dev/null (esto copia del cero y lo manda al null, quema el procesador)
+
+
+
+
+listar archivos abiertos
+lsof | grep "archivo a consultar"
+
+Cuanto instalamos lmo-hr
+debemos meter una compañia en job company
+
+
+Instalar Idiomas
+
+1) Stop odoo
+
+2) Update all po files (in source folders) 
+
+3) Delete all translations from database (DELETE FROM ir_translation WHERE lang = 'es_UY';)
+
+4) Run odoo with load language option. This will reload all po files from source folders back to database  (
+./odoo.py  -c odoo.cfg --stop-after-init --load-language=es_UY --database=dbn
+
+5) Start odoo
+
+
+
+ 
+Borni DHIFI  
+On 17/05/13 13:03
+Hi,
+
+in Line : server/openerp/addons/base/ir/ir_translation.py,66
+
+Here self._overwrite should be True in order to update existing translations.
+
+-- self._overwrite = context.get('overwrite', False)
+++ self._overwrite = context.get('overwrite', True)
+Thank You.
+
+AEROOO - ECOGUARD
+modulos desintalados (Aeroo) ecoguard
+report_aeroo
+report_aeroo_controller
+report_aeroo_direct_print
+report_aeroo_printscreen
+report_aeroo_sample
+account_partner_account_summary
+
+createdb -h localhost -U odoo -W nom_base
+zcat /tmp/nom_archivo.sql.gz | psql -U odoo -h localhost -W nom_base
+
+
+
+parametros del archivo crontab
+m=minuto
+h=hora
+dom=dia del mes
+mon = dia del mes
+dow = dia de la semana
+
+
+Esta linea de cron ejecuta a las 21 hs.
+
+0 21 * * *   root     /usr/local/nom_carpeta/nomscript
+
+Se debe substituir el script a ejecutar por los nombres correctos
+nomscript debe ser ejecutable y poder invocarse desde cualquier lugar del filesystem
+Hay que colocarla al final del archivo /etc/crontab siendo root.
+
+Luego de guardar el crontab se debe recargar la configuración de dicho servicio.
+
+/etc/init.d/cron reload
+
+siendo root
+opt/odoo/odoo-server.log
+
+
+ssh b@B mkdir -p .ssh
+
+cat .ssh/id_rsa.pub | ssh b@b 'cat >> .ssh/authorized_keys'
+
+
+="UY"&R2
+
+=IF(NOT(ISBLANK(S2)),"UY"&S2,"")
+
+
+
+
+=IF(ISBLANK(I3262),"",TEXT(I3262,"UY"&"000000000000"))
+
+
+
+Getting the Employee id of the Log User in Odoo - 8
+resource = self.env['resource.resource'].search([('user_id','=',self.env.user.id)])
+employee = self.env['hr.employee'].search([('resource_id','=',resource.id)])
+[('user_id', '=', uid)]
+
+
+101 - Central
+102 - Raquel
+103 - Silvia
+
+107 - Yamandu
+108 - Ricardo
+110 - Fernando Morales
+
+104 - Sala reuniones
+106 - Cocina
+111 - Servidores
+
+112 - Juan Hernández
+
+113 - Fernando Clavijo
+114 - Carlos (cuando está)
+
+115 - José María Ruiz
+116 - Juan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

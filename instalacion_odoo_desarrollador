@@ -1,0 +1,104 @@
+##
+### Actualizar sistema
+##
+sudo apt-get update 
+sudo apt-get dist-upgrade 
+
+
+##
+### Crear usuario odoo
+##
+sudo adduser --system --home=/opt/odoo --group odoo 
+
+# para una sesion interactiva
+# sudo su - odoo -s /bin/bash 
+
+
+##
+### Instalar y configurar postgres creando el role odoo
+##
+sudo apt-get install postgresql
+sudo su - postgres
+createuser --createdb --username postgres --no-createrole --no-superuser --pwprompt odoo
+exit
+
+
+# Habilitar conexiones remotas -NE56R
+cd /etc/postgresql/9.3/main/
+nano pg_hba.conf
+   # Agregar al final del archivo
+   # IPv4 TODOS
+   host    all             all             0.0.0.0/0               md5
+
+nano postgresql.conf
+   # Descomentar y cambiar 'localhost' por '*'
+   listen_addresses = '*'
+
+##
+### Dependencias pyton
+##
+sudo apt-get install graphviz ghostscript postgresql-client \
+python-dateutil python-feedparser python-matplotlib \
+python-ldap python-libxslt1 python-lxml python-mako \
+python-openid python-psycopg2 python-pybabel python-pychart \
+python-pydot python-pyparsing python-reportlab python-simplejson \
+python-tz python-vatnumber python-vobject python-webdav \
+python-werkzeug python-xlwt python-yaml python-imaging
+
+sudo apt-get install gcc python-dev mc bzr python-setuptools python-babel \
+python-feedparser python-reportlab-accel python-zsi python-openssl \
+python-egenix-mxdatetime python-jinja2 python-unittest2 python-mock \
+python-docutils lptools make python-psutil python-paramiko poppler-utils \
+python-pdftools antiword postgresql
+
+sudo apt-get install python-geoip python-requests python-decorator \
+wkhtmltopdf python-passlib python-pip
+
+sudo pip install wkhtmltopdf
+sudo pip install pyPdf
+sudo pip install qrcode
+sudo pip install BeautifulSoup4
+sudo apt-get install libcups2-dev
+sudo pip install pandas
+sudo apt-get install python-cups
+sudo apt-get install cups
+
+##
+###agregar binario de  whtkml  32bits (Nesesario para las impresiones en pdf)
+##
+sudo wget -P Downloads http://download.gna.org/wkhtmltopdf/0.12/0.12.1/wkhtmltox-0.12.1_linux-trusty-i386.deb
+cd Downloads
+sudo dpkg -i wkhtmltox-0.12.1_linux-trusty-i386.deb
+cd /usr/local/bin
+sudo cp wkhtmltoimage /usr/bin/wkhtmltoimage
+sudo cp wkhtmltopdf /usr/bin/wkhtmltopdf
+
+
+
+##
+### Descargar e instalar el server
+##
+Descargamos o por el navegador o con wget el latest de nightly 
+
+wget https://nightly.odoo.com/8.0/nightly/src/odoo_8.0.latest.zip
+
+##
+### Descomprimimos
+##
+
+unzip odoo_8.0.latest.zip
+
+creamos el archivo de configuracion llamado odoo.cfg con el siguiente contenido
+
+[options]
+admin_passwd = admin
+db_host = localhost
+db_port = 5432
+db_user = odoo
+db_password = odoo
+addons_path = /home/datamatic/Desktop/odoo/odoo-lmo/openerp/addons/,/home/datamatic/Desktop/odoo/odoo-lmo/openerp/addons-dtm/
+logfile = /home/datamatic/Desktop/logs/lmo.log
+xmlrpc_port = 8069
+
+*addons_path debemos colocar la ruta absoluta de nuestros addons
+

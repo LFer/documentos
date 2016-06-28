@@ -1,0 +1,25 @@
+apt-get install wput
+
+
+dpkg-reconfigure tzdata
+
+1) 40minutos
+2-3-4) 51 minutos
+5-6) 2:37
+7-8-9-10)5:30
+
+modulos removidos:
+account_partner_account_summary
+report_aeroo
+
+
+sudo rm -R report_aeroo
+sudo rm -R report_aeroo_controller
+sudo rm -R report_aeroo_direct_print
+sudo rm -R report_aeroo_printscreen
+sudo rm -R report_aeroo_sample
+sudo rm -R report_extended_voucher_receipt
+sudo rm -R report_extended_stock
+sudo rm -R report_extended_sale
+sudo rm -R report_extended_account
+sudo rm -R report_extended

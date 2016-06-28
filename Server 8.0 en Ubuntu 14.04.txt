@@ -1,0 +1,114 @@
+##
+### Actualizar sistema
+##
+sudo apt-get update 
+sudo apt-get dist-upgrade 
+
+
+##
+### Crear usuario openerp
+##
+sudo adduser --system --home=/opt/openerp --group openerp 
+sudo adduser --system --home=/opt/odoo --group odoo 
+
+# para una sesion interactiva
+# sudo su - openerp -s /bin/bash 
+# sudo su - odoo -s /bin/bash 
+
+
+##
+### Instalar y configurar posgres creando el role openerp
+##
+sudo apt-get install postgresql
+sudo su - postgres
+createuser --createdb --username postgres --no-createrole --no-superuser --pwprompt odoo
+exit
+
+
+# Habilitar conexiones remotas -NE56R
+cd /etc/postgresql/9.3/main/
+nano pg_hba.conf
+   # Agregar al final del archivo
+   # IPv4 TODOS
+   host    all             all             0.0.0.0/0               md5
+
+nano postgresql.conf
+   # Descomentar y cambiar 'localhost' por '*'
+   listen_addresses = '*'
+
+##
+### Dependencias pyton
+##
+sudo apt-get install graphviz ghostscript postgresql-client \
+python-dateutil python-feedparser python-matplotlib \
+python-ldap python-libxslt1 python-lxml python-mako \
+python-openid python-psycopg2 python-pybabel python-pychart \
+python-pydot python-pyparsing python-reportlab python-simplejson \
+python-tz python-vatnumber python-vobject python-webdav \
+python-werkzeug python-xlwt python-yaml python-imaging
+
+sudo apt-get install gcc python-dev mc bzr python-setuptools python-babel \
+python-feedparser python-reportlab-accel python-zsi python-openssl \
+python-egenix-mxdatetime python-jinja2 python-unittest2 python-mock \
+python-docutils lptools make python-psutil python-paramiko poppler-utils \
+python-pdftools antiword postgresql
+
+sudo apt-get install python-geoip python-requests python-decorator \
+wkhtmltopdf python-passlib python-pip
+
+sudo pip install wkhtmltopdf
+sudo pip install pyPdf
+sudo pip install qrcode
+sudo pip install BeautifulSoup4
+sudo apt-get install libcups2-dev
+sudo pip install pandas
+sudo apt-get install python-cups
+sudo apt-get install cups
+
+agregar whtkml 32bits
+
+##
+### Descargar e instalar el server
+##
+wget http://nightly.openerp.com/7.0/nightly/src/openerp-7.0-latest.tar.gz
+cd /opt/openerp
+sudo tar xvf ~/openerp-7.0-latest.tar.gz
+sudo chown -R openerp: *
+
+##
+### Configurar el server
+##
+mkdir /etc/openerp
+nano /etc/openerp-server.conf
+   [options]
+   ; This is the password that allows database operations:
+   ; admin_passwd = admin
+   db_host = False
+   db_port = False
+   db_user = openerp
+   db_password = qwerty159
+   logfile = /var/log/openerp/openerp-server.log
+
+sudo chown openerp: /etc/openerp-server.conf
+sudo chmod 640 /etc/openerp-server.conf
+
+sudo mkdir /var/log/openerp
+sudo chown openerp:root /var/log/openerp
+
+
+##
+### redirecion del puerto 80 al 8069
+##
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8069
+
+##
+### Instalar script de arranque
+##
+
+# Usar /opt/openerp/server/install/openerp-server.init y modificar
+# o bien copiar uno listo ==> scp script root@XXXX:/etc/init.d/openerp
+sudo chmod 755 /etc/init.d/openerp
+sudo chown root: /etc/init.d/openerp
+
+# Que arranque en los niveles por defecto
+sudo update-rc.d openerp-server defaults

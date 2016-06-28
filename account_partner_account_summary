@@ -1,0 +1,27 @@
+account_partner_account_summary
+report_aeroo
+report_aeroo_controller
+project
+project_issue
+portal_project
+portal_project_issue
+point_of_sale
+pos_discount
+
+
+Ver si estan cargados los parametros del sistema
+Configuracion -> Parametros del Sistema
+
+
+Mapear los impuestos de dgi con odoo
+Contabilidad ->Impuestos->Relación de Impuestos/Códigos DG
+
+Ver que las impresoras esten bien
+
+La IP del servidor en prodcción será 10.10.1.165
+
+En configuracion->Informes el informe account_invoice, pasarlo a PDF
+
+
+account/report/account_print_invoice3.rml
+/etc/network/interfaces

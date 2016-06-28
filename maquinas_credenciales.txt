@@ -1,0 +1,242 @@
+fzLocalales
+
+*Baldovi
+192.168.1.83:8069
+user = admin
+pass = admin
+ssh root@192.168.1.83
+pass = data1485
+
+*Renovables
+192.168.1.83:9069
+user = admin
+pass = admin
+ssh root@192.168.1.83
+pass = data1485
+
+*Ecoguard (Copia de Produccion)
+192.168.1.165:9069
+user = admin
+pass = 1234qwer*
+ssh odoo8@192.168.1.165
+pass = odoo8
+ssh usuario@192.168.1.165
+1234qwer*
+
+
+En la nube
+
+*Contabo-Produccion
+ssh root@213.136.73.63
+pass = jgDoZY6pYBLbJENn
+
+
+*Renovables/INCO
+ssh root@5.189.166.130
+9SBDGZtQlY7cyjw
+
+Postgres
+user: odoo
+pass: odoo
+
+Odoo
+5.189.166.130:8069
+admin
+admin
+
+
+Maquina física
+ecoguard.no-ip.org
+Credenciales:
+usuario
+1234qwer*
+
+Desde allí máquina virtual
+10.10.1.166:22
+
+Si queremos tunel:
+ssh -L 2222:10.10.1.166:22 usuario@ecoguard.no-ip.org
+Ahora localhost en el puerto 2222 es la virtual
+
+ssh usuario@ecoguard.no-ip.org
+1234qwer*
+
+ssh usuario@10.10.1.166
+1234qwer*
+
+___maquina - nueva__
+ssh ecoguard@ecoguard.no-ip.org
+1234qwer*
+
+Maquina 85
+
+ssh usuario@192.168.1.85	
+pass = usuario
+
+Maquina 86
+
+ssh usuario@192.168.1.86
+usuario
+
+maquina fisica donde estan las virtuales
+
+user = datamtic
+pass = 100preon
+
+ssh datamatic@192.168.1.52
+100preon
+cd prompts/vm
+./VMenu
+
+ssh datamatic@192.168.1.51
+100preon
+
+Vanacity SA
+IP: 79.143.186.228
+IPv6: 2a02:c200:0:10:2:5:7277:1
+VNC: 80.241.219.192::63043
+Password: 5u9g4B8QBL0wC
+OS: Ubuntu 14.04 (64)
+User: root
+Password: 4u9g4B8QBL0wC
+
+ssh root@79.143.186.228
+5u9g4B8QBL0wC
+
+
+RBK Uruguay SA
+La ip pública para acceder al servidor es 190.64.26.2
+ 
+El puerto que quedó para ssh desde afuera es 6022
+El puerto 8069 quedo redireccionado mismo del 8069 también desde afuera.
+ 
+Credenciales para el servidor Ubuntu
+usuario: datamatic
+contraseña: dmrbk.2015		
+dmrbk.2015
+
+190.64.26.2:8069
+
+ssh -p 6022 datamatic@190.64.26.2
+
+
+
+
+Maquina Vanacity
+http://192.168.1.88:8069/
+base= vanacity_testing
+
+ssh usuario@192.168.1.88
+usuario
+
+./odoo.py -c odoo.cfg --database=Vanacity_testing --update=product
+
+-------------------------------------------------------------------
+
+Jutep
+
+sudo /etc/init.d/openvpn start JUTEP
+
+Usuario: datamatic
+Password: juT3pd4T4m4t1c
+
+Servidor
+http://192.168.1.251:8069
+
+ssh jutep@192.168.1.251
+jutepserver
+
+/etc/init.d/openvpn stop JUTEP
+
+para fijarme la tabla de rutas
+route -n
+
+-------------------------------------------------------------------
+
+INCO
+192.168.1.84:8069
+ssh usuario@192.168.1.84
+usuario
+
+
+IP openerp 213.136.73.63 (en la Web de ingresar esos números)
+Base de Datos: ANATARDE
+Usuario: ATarde
+pass = atarde
+
+
+ssh root@213.136.73.63
+pass = jgDoZY6pYBLbJENn
+
+213.136.73.63
+
+login    | password  
+---------+-----------
+ admin   | 0erp-1nmo
+ Atarde  | atarde
+
+/usr/local
+son tres pasos
+lee de open
+genera una bd en sqlite
+se copia por scp
+halla NO CAMBIAR LA ESTRUCTURA DE LA SQLITE
+
+-------------------------------------------------------------------
+
+Datamatic WordPress
+root
+80.241.212.88
+Y4Hw3K9NasbDPxej
+
+
+RBK Uruguay SA
+
+La ip pública para acceder al servidor es 190.64.26.2
+
+El puerto que quedó para ssh desde afuera es 6022
+El puerto 8069 quedo redireccionado mismo del 8069 también desde afuera.
+ 
+Credenciales para el servidor Ubuntu
+usuario: datamatic
+contraseña: dmrbk.2015
+
+ssh -p 6022 datamatic@190.64.26.2
+
+
+Gihub Datamatic
+DatamaticSoftware@gmail.com
+asequis1485
+
+INCO en Contabo
+IP: 5.189.158.81
+ssh
+User: root
+Pass: Myp0TP47Uzabd
+ssh root@inco-pro
+5.189.158.81:8069
+VNC
+IP: 213.136.90.50:63021
+Pass: Myp0TP47Uzabd
+
+
+1) En /var/lib/postgresql/9.1/main borrar los enlaces a dichos certificados
+server.crt
+server.key
+
+2) Copiar los certificados
+cp /etc/ssl/certs/ssl-cert-snakeoil.pem /var/lib/postgresql/9.1/main/server.crt
+cp /etc/ssl/private/ssl-cert-snakeoil.key /var/lib/postgresql/9.1/main/server.key
+
+3) Cambiar el dueño a dichos archivos
+chown postgres:postgres server*
+
+
+
+
+
+
+
+
+
+

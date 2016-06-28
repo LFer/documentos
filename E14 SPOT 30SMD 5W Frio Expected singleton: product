@@ -1,0 +1,26 @@
+E14 SPOT 30SMD 5W Frio Expected singleton: product.template(464, 463)
+463 en prodtemp 464 enn prodprod
+
+E14 SPOT 30SMD 5W Cálida Expected singleton: product.template(464, 463) 
+463 en template 465 en prod
+
+E14 lámpara Tipo Vela Cálida Expected singleton: product.template(337, 338) 
+338 en template 338 en prod
+
+E14 lámpara Tipo Vela de filamento Cálida expected singleton: product.template(337, 338) 
+prodtem 337 337 en prod
+
+
+osea que
+E14 SPOT 30SMD 5W Frio  es 464 tiene 23 ventas 
+
+E14 SPOT 30SMD 5W Cálida es 465 tiene 13 ventas 
+
+E14 lámpara Tipo Vela Cálida es 338 tiene 40 ventas 
+
+E14 lámpara Tipo Vela de filamento Cálida es 337 tiene 56 ventas
+
+
+ver si un product_template tiene mas de un product_product
+
+si en product_product se repite un template_id

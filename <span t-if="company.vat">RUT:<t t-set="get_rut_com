@@ -1,0 +1,55 @@
+<span t-if="company.vat">RUT:<t t-set="get_rut_com" t-value="(company.vat)[2:]"/> <t t-esc="get_rut_com"/></span>
+
+    <xpath expr="//div[@class='col-xs-3']/div[@t-field='company.partner_id']" position="after">
+
+
+<t t-name="report.external_layout_header">
+    <div class="header">
+        <div class="row">
+            <div class="col-xs-3">
+                <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 45px;"/>
+            </div>
+            <div class="col-xs-9 text-right" style="margin-top:20px;" t-field="company.rml_header1"/>
+        </div>
+        <div class="row zero_min_height">
+            <div class="col-xs-12">
+                <div style="border-bottom: 1px solid black;"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">
+                <div t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" style="border-bottom: 1px solid black;"/>
+            </div>
+<span t-if="company.vat">RUT:<t t-set="get_rut_com" t-value="(company.vat)[2:]"/> <t t-esc="get_rut_com"/></span>
+        </div>
+    </div>
+</t>
+
+
+nota de credito de e-ticket out_refound y sin vat
+nota de credito de e-factura out_refound y con vat
+nota de debito de e-ticket
+nota de debito de e-factura
+
+
+
+hacer una funcion que evalue los flags y los estados y segun eso decida que cargar en un campo nuevo
+ese campo expresarlo en el qweb
+
+<button name="get_doc_type" type="object" string="Get doc type" class="oe_highlight"/>
+
+
+DatamaticSoftware@gmail.com
+
+FM
+
+<span>RUT:<t t-esc="company.vat"/></span>
+ <span t-if="company.vat">RUT:<t t-set="get_rut_com" t-value="(company.vat)[2:]"/> <t t-esc="get_rut_com"/></span>
+
+ <xpath expr="//div[@class='col-xs-3']/div[@t-field='company.partner_id']" position="after">
+
+
+
+<xpath expr="//div[@class='row']/div[@class='col-xs-3']/div[@t-field='company.partner_id']" position="before">
+    <span t-if="company.vat">RUT:<t t-set="get_rut_com" t-value="(company.vat)[2:]"/> <t t-esc="get_rut_com"/></span>
+</xpath>

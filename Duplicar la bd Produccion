@@ -1,0 +1,9 @@
+Duplicar la bd Produccion
+Instalar efacatura en Produccion
+Verificar/Crear los parametros de sistema, incluyendo el fe_inactiva
+Verificar la url de firma
+
+Para empezar a facturar electronicamente
+'apagar el switch' -> Borrar el parametro de sistema fe_inactiva
+ir a configuracion->Printers->Reports filtrar por el modelo account.invoice
+cambiar Tipo de informe de RML a PDF
