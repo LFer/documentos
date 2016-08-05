@@ -1,0 +1,82 @@
+vendedor interno-externo no puede ver precio de coste
+todos los que estan encima de ellos pueden verlo
+
+
+Operativa de Fabrica
+Solo ella puede tocar y modificar
+
+
+Agustin puede abrir orden de trabajo
+Todo lo que sea oficina tecnica
+jacobo
+daniela
+
+
+Daniela
+Orden de trabajo
+Operario
+
+Al momento de transferir  verificar con la PDA que el producto transferido sea el facturado 
+
+
+Daniela
+Es la UNICA que puede editar
+Puede modificar la orden en cualquier estado
+Agregar estado nuevo Facturado
+
+
+Ingreso de factura de clientes
+Warning al guardar sin haber agregado orden de trabajo
+Contabilidad-Proveedores-Facturas de Proveedor
+
+
+Devoluciones
+
+Traducir el metodo de reembolso de Crear una factura recticativa borrador A Crear nota de credito
+
+
+Cambiar precios de forma masiva
+por porcentaje
+dejar elegir precio de venta o de coste
+
+Al crear cliente por defecto admin en comercial y no verlo
+Al crear cliente hacer obligatorio todos los datos necesarios para la FE
+telefono o movil￼
+Crear campo moneda en cliente, segun la moneda llenar el campo Cuenta a cobrar (property_account_receivable) (pesos o dolares)
+
+
+Responsable de ventas son los unicos que pueden modificar los plazos de pago
+
+
+
+
+solo Daniela puede terminar una orden
+
+
+Si el solicitante es inco, no crear factura, crear producto
+
+checkear si el rut ya existe en el sistema
+
+
+tenemos que ver el tema de los rut
+
+RECURSOS HUMANOS
+Grisel, Lorena y Daniela
+
+
+Importaciones y Gestion de Stock Daniela y Gaston
+
+
+Historico de compras de un producto
+elegis el producto y el perdiodo 
+y te tra las compras en ese periodo
+
+
+
+PODER SEPARAR EL INFORME DE MATERIALES IMPORTADOS Y MATERIALES FABRICADOS
+
+
+Informes  de las ordenes cerradas y no facturadas
+
+
+Grisel

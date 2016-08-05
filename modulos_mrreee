@@ -1,0 +1,47 @@
+
+----------------------------------------------
+MRREE
+
+grp_lprg 
+*-*comentada linea 288 grp_lprg_view.xml, 
+*-*se elimino referencia a grp_estruct_pre_inciso de la seguridad linea 31 y 49
+y en  la seguridad de grp_apertura_presupuestal linea 14
+eliminada referencia al modelo grp_estruct_pres_ue en la seguridad de grp_lprg y grp_apertura_presupuestal
+eliminada referencia al modelo grp_estruc_pres_siff en la seguridad de grp_lprg y 
+comentada la seguridad de grp_lprg y grp_apertura_presupuestal
+comentada referencia grp_lprg_auditoria_report_view en __openerp__
+agregar dependencia report_webkit
+comentados los reportes
+
+grp_orden_compras
+en webkit_plantilla se saco el eval
+
+comentados los reportes
+
+grp_activos_fijo_cancilleria
+borrado de la linea 45 aluccion al cabezal de reporte wizard_view
+grp_viajes
+grp_viajes_report_view se saco la referencia al cabezal
+grp_calculo_tipo_cambio comentada linea 175
+grp_partidas_contralor_wizard
+grp_tesoreria
+grp_caja_chica comentado menu, linea 263 caja_chica_view.xml
+comentado menuitem linea 106 grp_caja_chica_tree_view
+comtenado 73 wizar/grp-report_informe_cch_view.xml
+grp_activos_fijos_cancilleria
+grp_presupuestos
+grp_factura_siif
+grp_sice_novedades
+grp_rendicion_fondo_rotatorio
+grp_integracion_siff - comentada vista que hereda de compras estatales "nueva vista para cancelacion" - Falta el archivo que contiene la descripcion del webservice "CGNSiif.wsdl"
+grp_rupe_proveedores
+grp_rupe_nov
+grp_partidas_presupuestos
+grp_departamentos_nombres
+grp_apertura_presupuestal
+grp_cargar_datos_rupe
+grp_alta_diarios
+grp_creacion_compañias
+grp_diario_activo
+grp_get_invoice_contralor
+grp_declaracion_activos_fijos

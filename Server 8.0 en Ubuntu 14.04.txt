@@ -65,10 +65,6 @@ sudo pip install pandas
 sudo apt-get install python-cups
 sudo apt-get install cups
 sudo apt-get install node-less
-sudo apt-get install xfonts-75dpi
-
-
-
 agregar whtkml 32bits
 
 ##

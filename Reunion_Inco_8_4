@@ -1,0 +1,21 @@
+Reunion Inco 4/08
+
+Vendedor Interno
+Ventas/Ventas
+Ocultar Presupuestos
+Vendedores no pueden crear productos
+Vendedor de mostrador ver la orden y crear facturasn
+En la factura no permitir Registrar Pago
+Ocultar - Contabilidad/Clientes/Pagos de Clientes
+Ocultar - Contabilidad/Proveedores/Pago a Proveedores
+Ocultad - Contabilidad/proveedores/Seguimiento de Pagos/Reconciliar Factuas y pagos
+Filtrar metodos de pago entre clientes y proveedores
+En la ficha de cliente, pestaña seguimiento de pagos mostrar el boton do_button_print (res.partner)
+En Ventas Productos/Productos no mostrar columna precio de coste
+Analizar la posibilidad de por contexto limitar el acceso a la creacion de productos, cuando esta 
+en Ventas, si entra por compras, si
+
+Analizar MRP
+
+Cotizadores - Ver pedidos de compra
+Agregar Solicitud de Compra
