@@ -45,25 +45,7 @@ admin
 admin
 
 
-Maquina física
-ecoguard.no-ip.org
-Credenciales:
-usuario
-1234qwer*
-
-Desde allí máquina virtual
-10.10.1.166:22
-
-Si queremos tunel:
-ssh -L 2222:10.10.1.166:22 usuario@ecoguard.no-ip.org
-Ahora localhost en el puerto 2222 es la virtual
-
-ssh usuario@ecoguard.no-ip.org
-1234qwer*
-
-ssh usuario@10.10.1.166
-1234qwer*
-
+ECOGUAR
 ___maquina - nueva__
 ssh ecoguard@ecoguard.no-ip.org
 1234qwer*
@@ -207,13 +189,13 @@ ssh -p 6022 datamatic@190.64.26.2
 Gihub Datamatic
 DatamaticSoftware@gmail.com
 asequis1485
-
+-----------------------
 INCO en Contabo
 IP: 5.189.158.81
 ssh
 User: root
 Pass: Myp0TP47Uzabd
-ssh root@inco-pro
+ssh root@inco-prod
 5.189.158.81:8069
 VNC
 IP: 213.136.90.50:63021
@@ -231,6 +213,13 @@ cp /etc/ssl/private/ssl-cert-snakeoil.key /var/lib/postgresql/9.1/main/server.ke
 3) Cambiar el dueño a dichos archivos
 chown postgres:postgres server*
 
+
+
+user = datamatic
+pass = d4TaVat1q
+
+Odooito
+otcdaatooadim
 
 
 
