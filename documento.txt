@@ -41,7 +41,6 @@ tar -czvf paquete.tar.gz archivo.txt
 
 y para crear tar si es un directorio es asi
 tar -czvf paquete.tar.gz directorio/
-tar -czvf paquete.tar.gz directorio/
 
 este comando es para descomprimir el sucucho
 tar xvfz /tmp/lmo.tar.gz 

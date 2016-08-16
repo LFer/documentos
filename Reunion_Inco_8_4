@@ -12,10 +12,24 @@ Ocultad - Contabilidad/proveedores/Seguimiento de Pagos/Reconciliar Factuas y pa
 Filtrar metodos de pago entre clientes y proveedores
 En la ficha de cliente, pestaña seguimiento de pagos mostrar el boton do_button_print (res.partner)
 En Ventas Productos/Productos no mostrar columna precio de coste
+
 Analizar la posibilidad de por contexto limitar el acceso a la creacion de productos, cuando esta 
 en Ventas, si entra por compras, si
 
-Analizar MRP
+Analizar MRP - Pronto
 
 Cotizadores - Ver pedidos de compra
-Agregar Solicitud de Compra
+Agregar Solicitud de Compra - Pronto
+
+
+ALEJANDRA
+	Sale = user
+	Solo puede ver clientes y llamadas registradas
+
+NATALIA
+	Ventas = User: All Leads
+	Contabilidad y finanzas
+	Cobros y pagos	
+
+JANETT
+	Contable
