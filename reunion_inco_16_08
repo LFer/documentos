@@ -1,0 +1,51 @@
+proveedor
+a compras y solo los usuarios de compras
+jacobo, gaston, carlos,gustavo
+tipo de pago
+proveedor
+en el cabezal orden de trabajo
+
+cargar la orden de trabajo al albaran que genera el pedido de compra
+
+agregar 
+proveedor, precio,tipo, tick el "elegido"-
+mostrar el boton cancelar en el estado aprobacions
+agregar orden de trabajo al pedido de compra, para asi escribirlo en el almacen
+
+con los elegidos crear un pedido de compra
+
+
+
+
+Cambiar Unidad por UdM
+Fecha Planificada achicar
+agrandar descripcion
+Ocultar Impuesto por Linea
+
+instalar modulo de licitaciones
+
+................................
+
+jacobo puede leer sobre la orden de trabajo
+
+
+
+quitar cuenta analitica
+
+cuantos viaticos hay que pagar por semana
+crear el filtro de las lineas de horas que tienen viaticos cargados y mostrarlo
+
+
+--------------------------------------------------------------------------------
+mostrar la resta de la entrada menos la salida
+sumar el viatico a las horas trabajadas
+
+
+---------------------------------------------------------------------------------
+esta duplicando
+
+estas cargando horas a una orden que estimacion de horas
+
+
+
+
