@@ -1,0 +1,33 @@
+SACAR LAS COLUMNAS de product.product_product_tree_view
+atributos
+codigo ean13
+agregarle el <field name="standard_price"/> (antes del list price)
+agregar el editado en linea <tree string="Product Variants" editable="bottom">
+eguimiento de pagos Contabilidad Avisos
+
+
+tubos, caño redondo, tubo redondo, tubular, caño hidrinox
+
+Abrazadera - unidad
+angulos y planchuela - metro
+Barras Redondas - kgs ---- se ingresa en kg se vende mt
+bombas - unidad
+cadena patente - metro
+chapas - unidad
+clamps - unitario
+collarines - unidades
+consumibles - unidades
+curvas - unidades
+
+hidrinox->
+	Caño Hidrinox - metros
+
+KG. CHAPA - Kilo
+
+Municiones - uni
+Parrillas Cableado - metros
+
+SYSTEM PLAST
+Cadenas - METROs
+tubos y caño redondo - metros
+tubulares - metro

@@ -233,10 +233,16 @@ chown postgres:postgres server*
 
 
 
+======================================
 
+Datamatic - Odoo
+http://213.136.70.228:8069
+usuario: admin
+clave:admin
+ssh
+usuario: root
+clave: AH2PWLpRB9U6gQ
 
+ssh root@213.136.70.228
 
-
-
-
-
+AH2PWLpRB9U6gQ
