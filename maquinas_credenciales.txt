@@ -210,9 +210,8 @@ asequis1485
 
 INCO en Contabo
 IP: 5.189.158.81
-ssh
-User: root
-Pass: Myp0TP47Uzabd
+ssh root@5.189.158.81
+Myp0TP47Uzabd
 ssh root@inco-pro
 5.189.158.81:8069
 VNC
@@ -247,20 +246,4 @@ ssh root@213.136.70.228
 
 AH2PWLpRB9U6gQ
 
-
-
-
-
-
-Datamatic en la nube
-
-OpenERP 7.0
-IP: 79.143.191.243
-user: root
-clave: 2VxuY3ctw9apsd
-
-
-Odoo 8.0
-IP: 213.136.70.228
-user: root
-clave: AH2PWLpRB9U6gQ
+AH2PWLpRB9U6gQ
