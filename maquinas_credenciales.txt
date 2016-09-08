@@ -210,9 +210,8 @@ asequis1485
 
 INCO en Contabo
 IP: 5.189.158.81
-ssh
-User: root
-Pass: Myp0TP47Uzabd
+ssh root@5.189.158.81
+Myp0TP47Uzabd
 ssh root@inco-pro
 5.189.158.81:8069
 VNC
@@ -244,5 +243,4 @@ usuario: root
 clave: AH2PWLpRB9U6gQ
 
 ssh root@213.136.70.228
-
 AH2PWLpRB9U6gQ
