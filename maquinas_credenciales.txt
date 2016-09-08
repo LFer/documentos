@@ -246,3 +246,21 @@ clave: AH2PWLpRB9U6gQ
 ssh root@213.136.70.228
 
 AH2PWLpRB9U6gQ
+
+
+
+
+
+
+Datamatic en la nube
+
+OpenERP 7.0
+IP: 79.143.191.243
+user: root
+clave: 2VxuY3ctw9apsd
+
+
+Odoo 8.0
+IP: 213.136.70.228
+user: root
+clave: AH2PWLpRB9U6gQ
