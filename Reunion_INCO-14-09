@@ -1,0 +1,35 @@
+Reunion INCO-14-09´
+1-Cambios en la Orden de Trabajo
+a-Cambiar estado Presupuesto por Cotizacion 
+y Orden de Trabajo Borrador por Cotizacion
+
+Cambiar Total estimado por Costo Estimado
+A partir de una Orden de Trabajo generar un Presupuesto
+Ocultar cuenta analitica en cabezal y lineas (cargar una por defecto)
+Tarifa  de compra  (costo) por defecto y ocultarla
+Mostrar precio de venta del producto
+Ocultar La parte de costos a los cotizadores
+Cliente abajo de Nombre y cambiar nombre por descripcion - hecho en produccion
+
+Cliente
+Descripcion - cambiar de char a text - hecho en produccion
+
+Agrupar por clientes y descripcion
+
+generar presupuesto a partir de la orden de trabajo (cotizacion)
+
+fecha de trabajo terminado, ultima fecha de carga de hora
+
+Cargar Divisa por defecto en dolares
+
+No esta exportando a pdf
+
+Agregar la orden de trabajo por linea
+
+cambiar campo pedido por a char
+
+Agregar campo numero de formulario (char)
+Exportar a csv con caracteres especiales
+
+Orden de trabajo con ficha cerrada o abierta, al mover en almacen e vincular una WO, impactar en bloque
+Ventas puede facturar al WO, pero no modificarla
