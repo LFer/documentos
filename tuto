@@ -1,0 +1,48 @@
+
+QUE TENEMOS QUE HACER
+0-HACER UN BAUCKUP DE LA DB Y LOS ADDONS SI ESTAS PARANOICO
+1-BAJAR EL SERVER
+2-Borrar las columnas de la base de datos - taxpayer_id , contribution_id (estan en res.company). en hr.employee taxpayer_id, TaxpayerDenomination,   
+ALTER TABLE res_company DROP COLUMN taxpayer_id;
+ALTER TABLE res_company DROP COLUMN contribution_id;
+ALTER TABLE hr_employee DROP COLUMN taxpayer_id;
+ALTER TABLE hr_employee DROP COLUMN "TaxpayerDenomination";
+
+2.5 - copiar el algo2 por algo, levantar el server, copiar el contenido de algo2 a algo en db y se borra algo2
+UPDATE hr_employee set taxpayer_id = taxpayer_id2;
+UPDATE hr_employee set "TaxpayerDenomination"= "TaxpayerDenomination2";
+ALTER TABLE res_company DROP COLUMN taxpayer_id2;
+ALTER TABLE res_company DROP COLUMN contribution_id2;
+ALTER TABLE hr_employee DROP COLUMN taxpayer_id2;
+ALTER TABLE hr_employee DROP COLUMN "TaxpayerDenomination2";
+3-Borrar el xml, Borrar la definicion del campo en el py
+
+
+           Name           |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   
+--------------------------+----------+----------+-------------+-------------+-----------------------
+ almacenes                | odoo     | UTF8     | es_UY.UTF-8 | es_UY.UTF-8 | 
+ desarrolladores_no_tocar | odoo     | UTF8     | es_UY.UTF-8 | es_UY.UTF-8 | 
+ inco_clien_prov1         | odoo     | UTF8     | es_UY.UTF-8 | es_UY.UTF-8 | 
+ inco_preprod             | odoo     | UTF8     | es_UY.UTF-8 | es_UY.UTF-8 | 
+ inco_prueba_poblada      | odoo     | UTF8     | es_UY.UTF-8 | es_UY.UTF-8 | 
+ incopreprod_3            | odoo     | UTF8     | es_UY.UTF-8 | es_UY.UTF-8 | 
+ matriz                   | odoo     | UTF8     | es_UY.UTF-8 | es_UY.UTF-8 | 
+ postgres                 | postgres | UTF8     | es_UY.UTF-8 | es_UY.UTF-8 | 
+ segunda                  | odoo     | UTF8     | es_UY.UTF-8 | es_UY.UTF-8 | 
+ segunda_prima            | odoo     | UTF8     | es_UY.UTF-8 | es_UY.UTF-8 | 
+ template0                | postgres | UTF8     | es_UY.UTF-8 | es_UY.UTF-8 | =c/postgres          +
+                          |          |          |             |             | postgres=CTc/postgres
+ template1                | postgres | UTF8     | es_UY.UTF-8 | es_UY.UTF-8 | =c/postgres          +
+                          |          |          |             |             | postgres=CTc/postgres
+ tercera                  | odoo     | UTF8     | es_UY.UTF-8 | es_UY.UTF-8 | 
+
+incopreprod_3,matriz,segunda,segunda_prima,tercera
+ALTER TABLE res_company DROP COLUMN taxpayer_id;
+ALTER TABLE res_company DROP COLUMN contribution_id;
+ALTER TABLE hr_employee DROP COLUMN taxpayer_id;
+ALTER TABLE hr_employee DROP COLUMN "TaxpayerDenomination";
+-------------------------------------------------------------
+ALTER TABLE res_company DROP COLUMN taxpayer_id2;
+ALTER TABLE res_company DROP COLUMN contribution_id2;
+ALTER TABLE hr_employee DROP COLUMN taxpayer_id2;
+ALTER TABLE hr_employee DROP COLUMN "TaxpayerDenomination2";
