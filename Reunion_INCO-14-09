@@ -1,35 +1,27 @@
-Reunion INCO-14-09´
-1-Cambios en la Orden de Trabajo
-a-Cambiar estado Presupuesto por Cotizacion 
-y Orden de Trabajo Borrador por Cotizacion
+Reunion INCO-14-09
 
-Cambiar Total estimado por Costo Estimado
-A partir de una Orden de Trabajo generar un Presupuesto
-Ocultar cuenta analitica en cabezal y lineas (cargar una por defecto)
-Tarifa  de compra  (costo) por defecto y ocultarla
-Mostrar precio de venta del producto
-Ocultar La parte de costos a los cotizadores
-Cliente abajo de Nombre y cambiar nombre por descripcion - hecho en produccion
+Cambios en la Orden de Trabajo:
+1 - Cambiar estado Presupuesto por Cotizacion - listo
+2 - Orden de Trabajo Borrador por Cotizacion - listo
+3 - Cambiar Total estimado por Costo Estimado - listo
+4 - A partir de una Orden de Trabajo generar un Presupuesto - listo
+5 - Ocultar cuenta analitica en cabezal y lineas (cargar una por defecto) - listo
+6 - Tarifa  de compra  (costo) por defecto y ocultarla - listo
+7 - Mostrar precio de venta del producto - listo
+9 - Cliente abajo de Nombre y cambiar nombre por descripcion - listo
+10 - Descripcion - cambiar de char a text - listo
+11 - Agrupar por clientes y descripcion  - listo  
+13 - Cargar Divisa por defecto en dolares - listo 
+14 - cambiar campo pedido por a char - listo 
+15 - Agregar la orden de trabajo por linea - wtf
+16 - Agregar campo numero de formulario (char)  - listo 
+17 - Exportar a csv con caracteres especiales  - listo 
 
-Cliente
-Descripcion - cambiar de char a text - hecho en produccion
-
-Agrupar por clientes y descripcion
-
-generar presupuesto a partir de la orden de trabajo (cotizacion)
-
-fecha de trabajo terminado, ultima fecha de carga de hora
-
-Cargar Divisa por defecto en dolares
-
-No esta exportando a pdf
-
-Agregar la orden de trabajo por linea
-
-cambiar campo pedido por a char
-
-Agregar campo numero de formulario (char)
-Exportar a csv con caracteres especiales
+--No esta exportando a pdf---
 
 Orden de trabajo con ficha cerrada o abierta, al mover en almacen e vincular una WO, impactar en bloque
-Ventas puede facturar al WO, pero no modificarla
+
+
+8 - Ocultar La parte de costos a los cotizadores
+12 - fecha de trabajo terminado, ultima fecha de carga de hora
+18 - Ventas puede facturar y abrir la WO, pero no modificarla

@@ -10,10 +10,11 @@ sudo apt-get dist-upgrade
 ##
 sudo adduser --system --home=/opt/openerp --group openerp 
 sudo adduser --system --home=/opt/odoo --group odoo 
-
+sudo adduser --system --home=/opt/odoo-9 --group odoo9
 # para una sesion interactiva
 # sudo su - openerp -s /bin/bash 
 # sudo su - odoo -s /bin/bash 
+sudo su - odoo9 -s /bin/bash 
 
 
 ##

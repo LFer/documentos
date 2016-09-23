@@ -1,0 +1,88 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:             odoo9-server
+# Required-Start:       $remote_fs $syslog
+# Required-Stop:        $remote_fs $syslog
+# Should-Start:         $network
+# Should-Stop:          $network
+# Default-Start:        2 3 4 5
+# Default-Stop:         0 1 6
+# Short-Description:    Enterprise Resource Management software
+# Description:          Open ERP (Odoo) is a complete ERP and CRM software.
+### END INIT INFO
+/opt/odoo-9/openerp-server
+/opt/odoo-9/odoo.cfg
+
+PATH=/bin:/sbin:/usr/bin
+DAEMON=/opt/odoo9/odoo-9/openerp-server
+NAME=odoo9
+DESC=odoo9
+
+# Specify the user name (Default: openerp).
+USER=odoo9
+
+# Specify an alternate config file (Default: /etc/openerp-server.conf).
+CONFIGFILE="/opt/odoo9/odoo-9/odoo.cfg"
+
+# pidfile
+PIDFILE=/var/run/$NAME.pid
+
+# Additional options that are passed to the Daemon.
+# DAEMON_OPTS="--no-database-list -c $CONFIGFILE"
+DAEMON_OPTS="-c $CONFIGFILE"
+
+[ -x $DAEMON ] || exit 0
+[ -f $CONFIGFILE ] || exit 0
+
+checkpid() {
+    [ -f $PIDFILE ] || return 1
+    pid=`cat $PIDFILE`
+    [ -d /proc/$pid ] && return 0
+    return 1
+}
+
+case "${1}" in
+        start)
+                echo -n "Starting ${DESC}: "
+
+                start-stop-daemon --start --quiet --pidfile ${PIDFILE} \
+                        --chuid ${USER} --background --make-pidfile \
+                        --exec ${DAEMON} -- ${DAEMON_OPTS}
+
+                echo "${NAME}."
+                ;;
+
+        stop)
+                echo -n "Stopping ${DESC}: "
+
+                start-stop-daemon --stop --quiet --pidfile ${PIDFILE} \
+                        --oknodo
+
+                echo "${NAME}."
+                ;;
+
+        restart|force-reload)
+                echo -n "Restarting ${DESC}: "
+
+                start-stop-daemon --stop --quiet --pidfile ${PIDFILE} \
+                        --oknodo
+      
+                sleep 1
+
+                start-stop-daemon --start --quiet --pidfile ${PIDFILE} \
+                        --chuid ${USER} --background --make-pidfile \
+                        --exec ${DAEMON} -- ${DAEMON_OPTS}
+
+                echo "${NAME}."
+                ;;
+
+        *)
+                N=/etc/init.d/${NAME}
+                echo "Usage: ${NAME} {start|stop|restart|force-reload}" >&2
+                exit 1
+                ;;
+esac
+
+exit 0
+

@@ -36,12 +36,32 @@ ALTER TABLE hr_employee DROP COLUMN "TaxpayerDenomination2";
                           |          |          |             |             | postgres=CTc/postgres
  tercera                  | odoo     | UTF8     | es_UY.UTF-8 | es_UY.UTF-8 | 
 
-incopreprod_3,matriz,segunda,segunda_prima,tercera
+almacenes
+desarrolladores_no_tocar,inco_preprod,incopreprod_3,matriz,segunda,segunda_prima,tercera
+
 ALTER TABLE res_company DROP COLUMN taxpayer_id;
 ALTER TABLE res_company DROP COLUMN contribution_id;
 ALTER TABLE hr_employee DROP COLUMN taxpayer_id;
 ALTER TABLE hr_employee DROP COLUMN "TaxpayerDenomination";
 -------------------------------------------------------------
+ALTER TABLE res_company DROP COLUMN taxpayer_id2;
+ALTER TABLE res_company DROP COLUMN contribution_id2;
+ALTER TABLE hr_employee DROP COLUMN taxpayer_id2;
+ALTER TABLE hr_employee DROP COLUMN "TaxpayerDenomination2";
+
+select taxpayer_id, taxpayer_id2, contribution_id, contribution_id2 from res_company;
+select taxpayer_id, taxpayer_id2, "TaxpayerDenomination", "TaxpayerDenomination2" from hr_employee;
+
+select taxpayer_id, contribution_id from res_company;
+select taxpayer_id "TaxpayerDenomination" from hr_employee;
+
+Cambiar las unidades de medidas de los productos
+Solucionar - Prodcutos estan cargados con una categoria, pero no aparecen cuando se lista productos por categoria
+
+ALTER TABLE res_company DROP COLUMN taxpayer_id;
+ALTER TABLE res_company DROP COLUMN contribution_id;
+ALTER TABLE hr_employee DROP COLUMN taxpayer_id;
+ALTER TABLE hr_employee DROP COLUMN "TaxpayerDenomination";
 ALTER TABLE res_company DROP COLUMN taxpayer_id2;
 ALTER TABLE res_company DROP COLUMN contribution_id2;
 ALTER TABLE hr_employee DROP COLUMN taxpayer_id2;

@@ -247,3 +247,8 @@ ssh root@213.136.70.228
 AH2PWLpRB9U6gQ
 
 AH2PWLpRB9U6gQ
+
+DATAMATIC ODOO9
+
+ssh datamatic@5.189.166.130
+password: data1485
