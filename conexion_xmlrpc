@@ -1,0 +1,12 @@
+common = xmlrpclib.ServerProxy('%s/xmlrpc/2/common' % srv)
+common.version()
+uid = common.authenticate(db, user, pwd, {})
+print uid
+api = xmlrpclib.ServerProxy('%s/xmlrpc/2/object' % srv)
+api.execute_kw(db, uid, pwd, 'res.partner', 'search_count', [[]])
+api.execute_kw(db, uid, pwd, 'res.partner', 'search',[[('country_id', '=', 'be'), ('parent_id', '!=', False)]])
+
+
+
+<button name="x_x" string="x" class="oe_highlight" type="object"/>
+ 

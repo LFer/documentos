@@ -258,7 +258,7 @@ employee = self.env['hr.employee'].search([('resource_id','=',resource.id)])
 103 - Silvia
 
 107 - Yamandu
-108 - Ricardo
+108 - Ricardo - RIP
 110 - Fernando Morales
 
 104 - Sala reuniones
@@ -270,12 +270,12 @@ employee = self.env['hr.employee'].search([('resource_id','=',resource.id)])
 113 - Fernando Clavijo
 114 - Carlos (cuando está)
 
-115 - José María Ruiz
+115 - José María Ruiz - RIP
 116 - Juan
 
+attrs="{'invisible': [('is_company', '=', False)]}"/>	
 
-
-
+https://www.safaribooksonline.com/library/view/python-cookbook-3rd/9781449357337/ch13s05.html
 
 
 

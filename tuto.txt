@@ -41,8 +41,13 @@ desarrolladores_no_tocar,inco_preprod,incopreprod_3,matriz,segunda,segunda_prima
 
 ALTER TABLE res_company DROP COLUMN taxpayer_id;
 ALTER TABLE res_company DROP COLUMN contribution_id;
+ALTER TABLE res_company DROP COLUMN taxpayer_id2;
+ALTER TABLE res_company DROP COLUMN contribution_id2;
+
 ALTER TABLE hr_employee DROP COLUMN taxpayer_id;
 ALTER TABLE hr_employee DROP COLUMN "TaxpayerDenomination";
+ALTER TABLE hr_employee DROP COLUMN taxpayer_id2;
+ALTER TABLE hr_employee DROP COLUMN "TaxpayerDenomination2";
 -------------------------------------------------------------
 ALTER TABLE res_company DROP COLUMN taxpayer_id2;
 ALTER TABLE res_company DROP COLUMN contribution_id2;

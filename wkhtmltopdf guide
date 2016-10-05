@@ -50,5 +50,5 @@ dpkg -i wkhtmltox-0.12.2.1_linux-trusty-i386.deb
 
 
 
-cp /usr/local/bin/wkhtmltopdf /usr/bin
-cp /usr/local/bin/wkhtmltoimage /usr/bin
+sudo cp /usr/local/bin/wkhtmltopdf /usr/bin
+sudo cp /usr/local/bin/wkhtmltoimage /usr/bin

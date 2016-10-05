@@ -67,8 +67,12 @@ sudo apt-get install python-cups
 sudo apt-get install cups
 sudo apt-get install node-less
 agregar whtkml 32bits
-﻿sudo pip installl requests
-sudo pip installl suds
+﻿sudo pip install requests
+sudo pip install suds
+sudo pip install ipdb
+sudo pip install genshi
+sudo apt-get install node-less
+sudo apt-get install xfonts-75dpi
 
 ##
 ### Descargar e instalar el server
