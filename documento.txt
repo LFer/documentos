@@ -275,8 +275,7 @@ employee = self.env['hr.employee'].search([('resource_id','=',resource.id)])
 
 attrs="{'invisible': [('is_company', '=', False)]}"/>	
 
-https://www.safaribooksonline.com/library/view/python-cookbook-3rd/9781449357337/ch13s05.html
-
+http://www.linuxproblem.org/art_9.html
 
 
 
